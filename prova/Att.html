@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VintageCars - Oficina de Carros Usados</title>
+    <style>
+        body {
+            font-family: Comic Sans MS, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+            background-color: #68cdbb; 
+            color: #000015;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            align-content: center;
+        }
+
+        .logo {
+            font-size: 25px;
+            font-weight: bold;
+
+           
+        }
+
+        nav {
+            display: flex;
+        }
+
+        nav a {
+            color: #000015;
+            text-decoration: none;
+            margin-left: 20px;
+        }
+
+        .container {
+            flex: 1;
+            display: grid;
+            grid-template-columns: 250px 1fr;
+            grid-gap: 20px;
+            padding: 20px;
+        }
+
+        .sidebar {
+            background-color: #68cdbb; 
+            color: #fff;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .sidebar a {
+            color: #000015;
+            text-decoration: none;
+            margin-bottom: 10px;
+        }
+
+        .main-content {
+            background-color: #f3f3f3;
+            padding: 20px;
+        }
+
+        .car-images {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .car-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            
+        }
+
+        footer {
+            background-color: #68cdbb; 
+            color: #000015;
+            text-align: center;
+            padding: 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+         <img src="https://png.pngtree.com/background/20230611/original/pngtree-vintage-car-drawing-in-pencil-style-picture-image_3159767.jpg" alt="logo" width="200" height="100" />
+
+        <div class="logo">VintageCars - Oficina de Carros Usados</div>
+       
+
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">Sobre</a>
+            <a href="#">Serviços</a>
+            <a href="#">Contato</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <div class="sidebar">
+            <p><a href="#">Agenda</a></p>
+            <p><a href="#">Orçamento</a></p>
+            <p><a href="#">Mecânicos</a></p>
+            <p><a href="#">Peças de reposição</a></p>
+            <p><a href="#">Atendimento</a></p>
+        </div>
+
+        <div class="main-content">
+            <div class="car-images">
+                <img class="car-image" src="https://motorshow.com.br/wp-content/uploads/sites/2/2015/08/img-366263-depois-de-70-anos-ultimo-tucker-torpedo-e-montado-67.jpg" alt="Carro 1">
+                <img class="car-image" src="https://www.planetcarsz.com/assets/uploads/2021/03/FORD%20MUSTANG%20MACH%201%20BY%20AMERICAN%20COLLECTOR%20SPECIALTIES%201970%2002.jpg" alt="Carro 2">
+                <img class="car-image" src="https://i.pinimg.com/originals/80/e8/b6/80e8b6862206fa891e60df419d1b50b3.jpg" alt="Carro 3">
+                <img class="car-image" src="https://blog.dubstore.com.br/wp-content/uploads/2022/04/Como-cuidar-de-carro-antigo-capa.jpg" alt="Carro 4">
+                <img class="car-image" src="https://www.maxicar.com.br/wp-content/uploads/2023/05/Clube-do-carro-Antigo-de-Viamao-presente-na-11%C2%B0-festa-do-peixe-em-Itapua-990x522.jpg" alt="Carro 5">
+                <img class="car-image" src="https://onlinequadros.com.br/static/acc/artist/ART-24852/gallery/72668/ART-24852_wQdEoc82qBeD6IY0BRFP.jpg" alt="Carro 6">
+                <img class="car-image" src="https://media.gazetadopovo.com.br/2009/05/aead2e377f30fa263cec4af1da68d45e-gpLarge.JPG" alt="Carro 7">
+                <img class="car-image" src="https://f.i.uol.com.br/fotografia/2017/03/17/675891-900x502-1.jpeg" alt="Carro 8">
+            </div>
+            
+        </div>
+    </div>
+
+    <footer>
+        <p>VintageCars - Oficina de Carros Usados</p>
+        <p>Rua Primavera, 0000 Fone: (88) 0000 0000</p> 
+        <p>Dando um novo começo ao passado!</p> 
+        
+    </footer>
+</body>
+</html>
