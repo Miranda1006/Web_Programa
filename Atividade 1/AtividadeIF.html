@@ -4,24 +4,23 @@
     <meta charset="UTF-8">
     <title>Administração - Gestão de Água Potável e Sustentabilidade</title>
     <style>
-        /* Estilos Gerais */
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f7fafc; /* Fundo suave */
+            background-color: #f7fafc;
             color: #333;
         }
 
         header {
-            background-color: #4a90e2; /* Azul mais suave */
+            background-color: #4a90e2;
             color: #fff;
             padding: 15px;
             text-align: center;
         }
 
         nav {
-            background-color: #357ABD; /* Azul intermediário */
+            background-color: #357ABD;
             padding: 8px;
         }
 
@@ -60,7 +59,7 @@
         }
 
         h2 {
-            color: #357ABD; /* Azul intermediário */
+            color: #357ABD;
             margin-bottom: 10px;
         }
 
@@ -81,7 +80,7 @@
         }
 
         input:focus, textarea:focus {
-            border-color: #4a90e2; /* Destaque ao focar */
+            border-color: #4a90e2;
         }
 
         button {
@@ -93,7 +92,7 @@
         }
 
         button:hover {
-            background-color: #357ABD; /* Azul mais escuro */
+            background-color: #357ABD;
         }
 
         table {
@@ -109,7 +108,7 @@
         }
 
         th {
-            background-color: #e9f3fb; /* Azul muito claro para cabeçalhos */
+            background-color: #e9f3fb;
         }
 
         footer {
@@ -119,7 +118,7 @@
             color: #fff;
             font-size: 14px;
             margin-top: 120px;
-            position: static; /* Removido o position: fixed */
+            position: static;
             bottom: 0;
             width: 100%;
         }
@@ -147,7 +146,7 @@
     </nav>
 
     <main>
-        <!-- Seção de Login -->
+        <!-- Login -->
         <section id="login" class="section active">
             <h2>Login</h2>
             <form id="loginForm">
@@ -157,7 +156,7 @@
             </form>
         </section>
 
-        <!-- Seção de Cadastro de Objeto Tema -->
+        <!-- Cadastro de Objeto Tema -->
         <section id="cadastro_objeto" class="section">
             <h2>Cadastro de Objeto Tema</h2>
             <form id="objectForm">
@@ -176,12 +175,12 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <!-- Linhas da tabela serão adicionadas aqui -->
+                    
                 </tbody>
             </table>
         </section>
 
-        <!-- Seção de Cadastro de Usuários -->
+        <!-- Cadastro de Usuários -->
         <section id="cadastro_usuario" class="section">
             <h2>Cadastro de Usuários</h2>
             <form id="userForm">
@@ -201,7 +200,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <!-- Linhas da tabela serão adicionadas aqui -->
+                    
                 </tbody>
             </table>
         </section>
@@ -220,12 +219,12 @@
         }
 
         document.getElementById('loginForm').addEventListener('submit', function(event) {
-            event.preventDefault(); // Impede o envio padrão do formulário
-            window.location.href = 'AtividadeIF2.html'; // Redireciona para o link desejado
+            event.preventDefault(); // Impede o envio do formulário
+            window.location.href = 'AtividadeIF2.html'; // Redireciona para o link (Não precisa)
         });
 
         document.getElementById('objectForm').addEventListener('submit', function(event) {
-            event.preventDefault(); // Impede o envio padrão do formulário
+            event.preventDefault();
             const name = document.getElementById('objectName').value;
             const description = document.getElementById('objectDescription').value;
 
@@ -243,12 +242,12 @@
 
             tableBody.appendChild(row);
 
-            // Limpa o formulário após a adição
+            
             document.getElementById('objectForm').reset();
         });
 
         document.getElementById('userForm').addEventListener('submit', function(event) {
-            event.preventDefault(); // Impede o envio padrão do formulário
+            event.preventDefault();
             const name = document.getElementById('userName').value;
             const email = document.getElementById('userEmail').value;
 
@@ -266,12 +265,12 @@
 
             tableBody.appendChild(row);
 
-            // Limpa o formulário após a adição
+          
             document.getElementById('userForm').reset();
         });
 
         document.addEventListener('DOMContentLoaded', function() {
-            // Adiciona o evento para os botões "Apagar"
+     
             document.addEventListener('click', function(event) {
                 if (event.target.classList.contains('delete-btn')) {
                     const row = event.target.closest('tr');
@@ -279,14 +278,14 @@
                 }
             });
 
-            // Adiciona o evento para os botões "Editar"
+       
             document.addEventListener('click', function(event) {
                 if (event.target.classList.contains('edit-btn')) {
                     const row = event.target.closest('tr');
                     const name = row.children[0].textContent;
                     const description = row.children[1].textContent;
 
-                    // Abre um prompt para edição (ou você pode abrir um modal)
+           
                     const newName = prompt('Novo Nome:', name);
                     const newDescription = prompt('Nova Descrição:', description);
 
