@@ -1,0 +1,23 @@
+
+<html>
+ <head>
+ 	<title>
+ 		Meu segundo script em HTML!
+ 	</title>
+ </head>
+ <body bgcolor="pink">
+ <p align="center">
+ 	<font color="red" face="Courier" size= "9">
+ 	Olá, Boa Tarde!
+ 	<br>
+ 	<strong> Boa Tarde!</strong>
+ 	<br>
+ 	<strike> Boa Tarde!</strike>
+ 	<br>
+ 	<em> Boa tarde!</em>
+ </font>
+ </p>
+
+</body>
+</html>
+
