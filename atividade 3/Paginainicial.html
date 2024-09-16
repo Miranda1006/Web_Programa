@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Gestão de Água Potável e Sustentabilidade</title>
+    <!-- Importa o arquivo de estilo CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- Cabeçalho e Menu de Navegação -->
+<header>
+    <h1>Gestão de Água Potável e Sustentabilidade</h1>
+    <!--<img src="logo.png" alt="Logo do Site"> -->
+</header>
+
+<nav>
+    <!-- Checkbox para controle do menu -->
+    <input type="checkbox" id="menu-toggle">
+    <!-- Ícone de menu -->
+    <label for="menu-toggle" class="menu-icon">&#9776; Menu</label>
+    
+    <ul>
+        <li><a href="#" onclick="showSection('home')">Página Inicial</a></li>
+        <li><a href="#" onclick="showSection('detalhes')">Detalhes</a></li>
+        <li><a href="sobre2.html" onclick="showSection('sobre')">Sobre o Autor</a></li>
+        <li><a href="login.html" onclick="showSection('Voltar ao Login')">Voltar ao Login</a></li>
+    </ul>
+</nav>
+
+<!-- Página Inicial -->
+<main id="home" class="section active">
+    <h2>Coleção de Objetos Tema</h2>
+    <section>
+        <article>
+            <h3>Internet das coisas (IoT) e sensores inteligentes.</h3>
+            <img src="https://www.institutodeengenharia.org.br/site/wp-content/uploads/2016/08/iot-mercado.png" alt="Imagem do Objeto 1">
+            <a href="#" onclick="showSection('detalhes')">Mais detalhes</a>
+        </article>
+        <article>
+            <h3>Sistemas de tratamento de água eficientes energeticamente.</h3>
+            <img src="https://blog.brkambiental.com.br/wp-content/uploads/2019/02/tratamento-de-esgoto.jpg" alt="Imagem do Objeto 2">
+            <a href="#" onclick="showSection('detalhes')">Mais detalhes</a>
+        </article>
+        <article>
+            <h3>Inteligência artificial (IA) e aprendizado de máquina.</h3>
+            <img src="https://www.terraanalises.com/doutor/uploads/2/blog/2024/06/blog-inteligencia-artificial-no-tratamento-de-agua-uma-revolucao-sustentavel-37397642d3.jpg" alt="Imagem do Objeto 3">
+            <a href="#" onclick="showSection('detalhes')">Mais detalhes</a>
+        </article>
+        <article>
+            <h3>Tecnologias de dessalinização e reutilização de água</h3>
+            <img src="https://www.abes-sp.org.br/wp-content/uploads/2021/06/perdas-1.jpg" alt="Imagem do Objeto 4">
+            <a href="#" onclick="showSection('detalhes')">Mais detalhes</a>
+        </article>
+    </section>
+</main>
+
+<!-- Página de Detalhes -->
+<main id="detalhes" class="section">
+    <h2>Detalhes dos Objetos Tema</h2>
+    <section>
+        <article>
+            <h3>Internet das coisas (IoT) e sensores inteligentes.</h3>
+            <img src="https://www.institutodeengenharia.org.br/site/wp-content/uploads/2016/08/iot-mercado.png" alt="Imagem do Objeto 1">
+            <p>A IoT permite a implantação de sensores em toda a infraestrutura hídrica para monitorar em tempo real a qualidade da água, o consumo e a detecção de vazamentos. Isso permite respostas mais rápidas a problemas.</p>
+        </article>
+        <article>
+            <h3>Sistemas de tratamento de água eficientes energeticamente.</h3>
+            <img src="https://blog.brkambiental.com.br/wp-content/uploads/2019/02/tratamento-de-esgoto.jpg" alt="Imagem do Objeto 2">
+            <p>Novos sistemas de tratamento estão sendo desenvolvidos para reduzir o consumo de energia e minimizar a produção de resíduos.</p>
+        </article>
+        <article>
+            <h3>Inteligência artificial (IA) e aprendizado de máquina.</h3>
+            <img src="https://www.terraanalises.com/doutor/uploads/2/blog/2024/06/blog-inteligencia-artificial-no-tratamento-de-agua-uma-revolucao-sustentavel-37397642d3.jpg" alt="Imagem do Objeto 3">
+            <p>A IA é usada para prever a demanda de água, otimizar o tratamento de água e identificar padrões de consumo. O aprendizado de máquina melhora a eficiência operacional.</p>
+        </article>
+        <article>
+            <h3>Tecnologias de dessalinização e reutilização de água</h3>
+            <img src="https://www.abes-sp.org.br/wp-content/uploads/2021/06/perdas-1.jpg" alt="Imagem do Objeto 4">
+            <p>A dessalinização está se tornando mais acessível e eficiente. A reutilização de água tratada para fins não potáveis é uma tendência crescente.</p>
+        </article>
+    </section>
+</main>
+
+<!-- Página Sobre o Autor -->
+<main id="sobre" class="section">
+    <h2>Sobre o Autor</h2>
+    <section>
+        <p>Informações sobre o autor do site, incluindo biografia, experiência e outras informações relevantes.</p>
+    </section>
+</main>
+<!-- Rodapé -->
+<footer>
+    <p>Autor: Seu Nome | <a href="sobre2.html" onclick="showSection('sobre')">Sobre o Autor</a></p>
+</footer>
+<!-- Script de Navegação -->
+<script>
+    function showSection(sectionId) {
+        document.querySelectorAll('.section').forEach(section => {
+            section.classList.remove('active');
+        });
+        document.getElementById(sectionId).classList.add('active');
+    }
+</script>
+
+</body>
+</html>

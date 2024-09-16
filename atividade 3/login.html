@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Administração - Gestão de Água Potável e Sustentabilidade</title>
+    <link rel="stylesheet" href="styleslogin.css">
+</head>
+<body>
+    <header>
+        <h1>Gestão de Água Potável e Sustentabilidade</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#" onclick="showSection('login')">Login</a></li>
+            <li><a href="#" onclick="showSection('cadastro_objeto')">Cadastro de Objeto</a></li>
+            <li><a href="#" onclick="showSection('cadastro_usuario')">Cadastro de Usuários</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <!-- Seção de Login -->
+        <section id="login" class="section active">
+            <h2>Login</h2>
+            <form id="loginForm">
+                <input type="text" placeholder="Usuário" required>
+                <input type="password" placeholder="Senha" required>
+                <button type="submit">Entrar</button>
+            </form>
+        </section>
+
+        <!-- Seção de Cadastro de Objeto Tema -->
+        <section id="cadastro_objeto" class="section">
+            <h2>Cadastro de Objeto Tema</h2>
+            <form id="objectForm">
+                <input type="text" id="objectName" placeholder="Nome do Objeto" required>
+                <textarea id="objectDescription" placeholder="Descrição" required></textarea>
+                <button type="submit">Cadastrar</button>
+            </form>
+
+            <h2>Objetos Cadastrados</h2>
+            <table id="objectTable">
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Descrição</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Linhas da tabela serão adicionadas aqui -->
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Seção de Cadastro de Usuários -->
+        <section id="cadastro_usuario" class="section">
+            <h2>Cadastro de Usuários</h2>
+            <form id="userForm">
+                <input type="text" id="userName" placeholder="Nome" required>
+                <input type="email" id="userEmail" placeholder="Email" required>
+                <input type="password" id="userPassword" placeholder="Senha" required>
+                <button type="submit">Cadastrar</button>
+            </form>
+
+            <h2>Usuários Cadastrados</h2>
+            <table id="userTable">
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Email</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Linhas da tabela serão adicionadas aqui -->
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    <footer>
+        <p>Autor: Giselly | <a href="sobre1.html" style="color: #fff; text-decoration: underline;">Sobre o Autor</a></p>
+    </footer>
+
+    <script>
+        function showSection(sectionId) {
+            document.querySelectorAll('.section').forEach(section => {
+                section.classList.remove('active');
+            });
+            document.getElementById(sectionId).classList.add('active');
+        }
+
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Impede o envio padrão do formulário
+            window.location.href = 'Paginainicial.html'; // Redireciona para o link desejado
+        });
+
+        document.getElementById('objectForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Impede o envio padrão do formulário
+            const name = document.getElementById('objectName').value;
+            const description = document.getElementById('objectDescription').value;
+
+            const tableBody = document.querySelector('#objectTable tbody');
+            const row = document.createElement('tr');
+
+            row.innerHTML = `
+                <td>${name}</td>
+                <td>${description}</td>
+                <td>
+                    <button class="edit-btn">Editar</button>
+                    <button class="delete-btn">Apagar</button>
+                </td>
+            `;
+
+            tableBody.appendChild(row);
+
+            // Limpa o formulário após a adição
+            document.getElementById('objectForm').reset();
+        });
+
+        document.getElementById('userForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Impede o envio padrão do formulário
+            const name = document.getElementById('userName').value;
+            const email = document.getElementById('userEmail').value;
+
+            const tableBody = document.querySelector('#userTable tbody');
+            const row = document.createElement('tr');
+
+            row.innerHTML = `
+                <td>${name}</td>
+                <td>${email}</td>
+                <td>
+                    <button class="edit-btn">Editar</button>
+                    <button class="delete-btn">Apagar</button>
+                </td>
+            `;
+
+            tableBody.appendChild(row);
+
+            // Limpa o formulário após a adição
+            document.getElementById('userForm').reset();
+        });
+
+        document.addEventListener('DOMContentLoaded', function() {
+            // Adiciona o evento para os botões "Apagar"
+            document.addEventListener('click', function(event) {
+                if (event.target.classList.contains('delete-btn')) {
+                    const row = event.target.closest('tr');
+                    row.remove();
+                }
+            });
+
+            // Adiciona o evento para os botões "Editar"
+            document.addEventListener('click', function(event) {
+                if (event.target.classList.contains('edit-btn')) {
+                    const row = event.target.closest('tr');
+                    const name = row.children[0].textContent;
+                    const description = row.children[1].textContent;
+
+                    // Abre um prompt para edição (ou você pode abrir um modal)
+                    const newName = prompt('Novo Nome:', name);
+                    const newDescription = prompt('Nova Descrição:', description);
+
+                    if (newName && newDescription) {
+                        row.children[0].textContent = newName;
+                        row.children[1].textContent = newDescription;
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
